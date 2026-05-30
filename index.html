@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gajah Mada Dental Center - Klinik Gigi Modern Medan</title>
+
+    <meta name="description" content="Klinik gigi modern, steril, dan terpercaya di Medan. Pendaftaran instan tanpa ribet untuk perawatan behel, scaling, cabut gigi, dan dokter gigi spesialis.">
+
+    <meta name="keywords" content="klinik gigi medan, dokter gigi medan, gajah mada dental center, pasang behel medan, scaling gigi medan">
+    <meta name="author" content="Gajah Mada Dental Center">
+
+    <link rel="icon" type="image/png" href="img/logo.jpg">
+    <link rel="apple-touch-icon" href="img/logo.jpg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* Animasi pantul lembut dari bawah ke atas */
+        @keyframes pantulUp {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.03);
+                /* Bergerak ke atas dan membesar sedikit */
+            }
+        }
+
+        /* Class untuk memicu animasi secara halus */
+        .animasi-wa-pantul {
+            animation: pantulUp 0.6s ease-in-out 3;
+            /* Memantul 3 kali lalu berhenti natural */
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- TOP BAR & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+                <div
+                    class="h-12 flex items-center justify-center overflow-hidden rounded-full [[img[src$='1x1']]:aspect-square]:bg-slate-100">
+                    <img src="img/logo.jpg" alt="Logo Gajah Mada Dental Center"
+                        class="h-full w-auto object-cover rounded-[inherit]">
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight block text-slate-900">GAJAH MADA</span>
+                    <span class="text-xs font-semibold text-teal-600 tracking-wider uppercase block -mt-1">Dental Center
+                        Medan</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#hero" class="hover:text-teal-600 transition">Beranda</a>
+                <a href="#layanan" class="hover:text-teal-600 transition">Layanan</a>
+                <a href="#jadwal" class="hover:text-teal-600 transition">Jadwal</a>
+                <a href="#testimoni" class="hover:text-teal-600 transition">Testimoni</a>
+                <a href="#artikel" class="hover:text-teal-600 transition">Artikel</a>
+                <a href="#booking" onclick="tampilkanFormBooking()"
+                    class="bg-teal-600 text-white px-5 py-2.5 rounded-full hover:bg-teal-700 transition shadow-md shadow-teal-100">
+                    Booking Yuk!
+                </a>
+            </nav>
+
+            <div class="md:hidden flex items-center">
+                <button id="btn-hamburger" class="text-slate-700 hover:text-teal-600 focus:outline-none transition"
+                    aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-sidebar"
+        class="fixed inset-0 z-[100] bg-slate-950/60 backdrop-blur-sm invisible opacity-0 transition-all duration-300">
+        <div id="sidebar-panel"
+            class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white p-6 pb-24 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between z-[110]">
+            <div>
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-100">
+                    <span class="font-bold text-slate-900">Menu Navigasi</span>
+                    <button id="btn-close-sidebar" class="text-slate-500 hover:text-red-500 transition">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-5 text-base font-medium text-slate-600">
+                    <a href="#hero" class="mobile-link hover:text-teal-600 transition py-1">Beranda</a>
+                    <a href="#layanan" class="mobile-link hover:text-teal-600 transition py-1">Layanan</a>
+                    <a href="#jadwal" class="mobile-link hover:text-teal-600 transition py-1">Jadwal</a>
+                    <a href="#testimoni" class="mobile-link hover:text-teal-600 transition py-1">Testimoni</a>
+                    <a href="#artikel" class="mobile-link hover:text-teal-600 transition py-1">Artikel</a>
+                </nav>
+            </div>
+
+            <div class="mb-8">
+                <a href="#booking" onclick="tampilkanFormBooking(); closeSidebar();"
+                    class="block text-center bg-teal-600 text-white py-3.5 rounded-xl font-semibold hover:bg-teal-700 transition shadow-lg shadow-teal-100 relative z-[120]">
+                    <i class="fa-solid fa-calendar-check mr-2"></i>Booking Yuk!
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero"
+        class="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-sky-50 py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6" data-aos="fade-right" data-aos-duration="1000">
+                <div
+                    class="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 text-teal-700 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-location-dot"></i> Klinik Gigi Modern di Medan
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                    Kesehatan & Keindahan Senyum Keluarga Anda
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
+                    Layanan perawatan gigi lengkap mulai dari perawatan dasar hingga estetik. Didukung dokter
+                    profesional dan peralatan modern dengan tempat yang nyaman, bersih, dan higienis.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#booking" onclick="tampilkanFormBooking()"
+                        class="bg-teal-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-teal-700 transition shadow-lg shadow-teal-200 text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Pilih Layanan & Bayar
+                    </a>
+                    <a href="#layanan"
+                        class="border border-slate-200 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 transition text-center">
+                        Lihat Daftar Harga
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Utama -->
+            <div class="relative flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="w-full max-w-md h-96 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <img src="img/ruang gigi.jpg" alt="Interior Gajah Mada Dental Center Medan"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-6">
+                        <div class="text-white space-y-1">
+                            <p class="text-xl font-bold">Fasilitas Modern & Steril</p>
+                            <p class="text-xs opacity-80 font-light">Gajah Mada Dental Center Medan menjamin kenyamanan
+                                medis Anda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI / HIGHLIGHT SECTION -->
+    <section id="tentang" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Container Utama berlatar gelap ala FDC Dental Clinic -->
+            <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl grid lg:grid-cols-3 gap-8 items-center"
+                data-aos="zoom-in" data-aos-duration="800">
+
+                <!-- KOLOM 1: Foto Tindakan Dokter Gigi Asli -->
+                <div class="relative h-64 lg:h-full w-full rounded-2xl overflow-hidden shadow-md">
+                    <img src="img/ruang perawatan.avif"
+                        alt="Dokter gigi Gajah Mada Dental Center memeriksa pasien dengan ramah"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <!-- Overlay Efek Gradien Lembut -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent">
+                    </div>
+                </div>
+
+                <!-- KOLOM 2: Deskripsi Komitmen Klinik -->
+                <div class="space-y-4 lg:pr-4">
+                    <div
+                        class="inline-flex items-center gap-1.5 bg-teal-500/10 text-teal-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-[10px]"></i> Standar Premium
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight">Mengapa Memilih Gajah Mada
+                        Dental Center?</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Kami berkomitmen memberikan pelayanan terbaik untuk keindahan senyum Anda. Semua kebutuhan
+                        perawatan gigi lengkap tersedia di satu tempat, bersih, higienis, dan tanpa perlu pendaftaran
+                        akun yang rumit.
+                    </p>
+                </div>
+
+                <!-- KOLOM 3: Grid Kartu Keunggulan Mini -->
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div
+                        class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-sm hover:border-teal-500/40 transition">
+                        <div
+                            class="w-10 h-10 bg-teal-500/20 text-teal-400 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-user-doctor text-lg"></i>
+                        </div>
+                        <h5 class="font-bold text-sm mb-1 text-white">Tim Dokter</h5>
+                        <p class="text-[11px] text-slate-400 leading-normal">Tenaga medis profesional & spesialis
+                            berkompeten.</p>
+                    </div>
+
+                    <div
+                        class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-sm hover:border-teal-500/40 transition">
+                        <div
+                            class="w-10 h-10 bg-teal-500/20 text-teal-400 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-hand-holding-heart text-lg"></i>
+                        </div>
+                        <h5 class="font-bold text-sm mb-1 text-white">Higienis & Steril</h5>
+                        <p class="text-[11px] text-slate-400 leading-normal">Peralatan modern dengan sterilisasi
+                            berlapis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING & SERVICES SECTION -->
+    <section id="layanan" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Layanan Perawatan Gigi
+                    Lengkap</h2>
+                <p class="text-slate-500">Transparansi harga dari perawatan dasar hingga estetik, semua dalam satu
+                    tempat.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="border border-slate-100 rounded-2xl p-6 bg-white hover:border-teal-500 transition shadow-sm hover:shadow-md flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <span class="p-3 bg-teal-50 text-teal-600 rounded-xl inline-block mb-4"><i
+                                class="fa-solid fa-wand-magic-sparkles text-xl"></i></span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Scaling Gigi</h3>
+                        <p class="text-xs text-slate-500 mb-4">Pembersihan karang gigi menyeluruh dan higienis.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-slate-900 mb-4">Rp 250.000</div>
+                        <a href="#booking" onclick="setLayanan('Scaling Gigi', 250000)"
+                            class="w-full bg-slate-50 border border-slate-200 text-teal-700 text-center py-2 rounded-xl text-sm font-semibold block hover:bg-teal-600 hover:text-white transition">Pilih
+                            Tindakan</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="border border-slate-100 rounded-2xl p-6 bg-white hover:border-teal-500 transition shadow-sm hover:shadow-md flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <span class="p-3 bg-teal-50 text-teal-600 rounded-xl inline-block mb-4"><i
+                                class="fa-solid fa-tooth text-xl"></i></span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Tambal Gigi</h3>
+                        <p class="text-xs text-slate-500 mb-4">Restorasi komposit sewarna gigi asli yang berlubang.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-slate-900 mb-4">Rp 350.000</div>
+                        <a href="#booking" onclick="setLayanan('Tambal Gigi (Komposit)', 350000)"
+                            class="w-full bg-slate-50 border border-slate-200 text-teal-700 text-center py-2 rounded-xl text-sm font-semibold block hover:bg-teal-600 hover:text-white transition">Pilih
+                            Tindakan</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="border border-slate-100 rounded-2xl p-6 bg-white hover:border-teal-500 transition shadow-sm hover:shadow-md flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <span class="p-3 bg-teal-50 text-teal-600 rounded-xl inline-block mb-4"><i
+                                class="fa-solid fa-screwdriver text-xl"></i></span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Cabut & Saluran Akar</h3>
+                        <p class="text-xs text-slate-500 mb-4">Pencabutan aman atau terapi penyelamatan saraf gigi.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-slate-900 mb-4">Rp 400.000</div>
+                        <a href="#booking" onclick="setLayanan('Cabut / Perawatan Saluran Akar', 400000)"
+                            class="w-full bg-slate-50 border border-slate-200 text-teal-700 text-center py-2 rounded-xl text-sm font-semibold block hover:bg-teal-600 hover:text-white transition">Pilih
+                            Tindakan</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="border border-slate-100 rounded-2xl p-6 bg-white hover:border-teal-500 transition shadow-sm hover:shadow-md flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <span class="p-3 bg-teal-50 text-teal-600 rounded-xl inline-block mb-4"><i
+                                class="fa-solid fa-face-smile text-xl"></i></span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Bleaching (Pemutihan)</h3>
+                        <p class="text-xs text-slate-500 mb-4">Transformasi warna gigi menjadi cerah alami dengan cepat.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-slate-900 mb-4">Rp 2.000.000</div>
+                        <a href="#booking" onclick="setLayanan('Bleaching (Pemutihan)', 2000000)"
+                            class="w-full bg-slate-50 border border-slate-200 text-teal-700 text-center py-2 rounded-xl text-sm font-semibold block hover:bg-teal-600 hover:text-white transition">Pilih
+                            Tindakan</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="border border-slate-100 rounded-2xl p-6 bg-white hover:border-teal-500 transition shadow-sm hover:shadow-md flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <span class="p-3 bg-teal-50 text-teal-600 rounded-xl inline-block mb-4"><i
+                                class="fa-solid fa-mask text-xl"></i></span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Behel Gigi (Orthodontic)</h3>
+                        <p class="text-xs text-slate-500 mb-4">Pemasangan bracket standar kualitas estetik tinggi.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-slate-900 mb-4">Rp 4.500.000</div>
+                        <a href="#booking" onclick="setLayanan('Behel Gigi (Orthodontic)', 4500000)"
+                            class="w-full bg-slate-50 border border-slate-200 text-teal-700 text-center py-2 rounded-xl text-sm font-semibold block hover:bg-teal-600 hover:text-white transition">Pilih
+                            Tindakan</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="border border-slate-100 rounded-2xl p-6 bg-white hover:border-teal-500 transition shadow-sm hover:shadow-md flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <span class="p-3 bg-teal-50 text-teal-600 rounded-xl inline-block mb-4"><i
+                                class="fa-solid fa-star text-xl"></i></span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Veneer & Smile Makeover</h3>
+                        <p class="text-xs text-slate-500 mb-4">Restorasi bentuk dan warna gigi ideal kustomisasi penuh.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-slate-900 mb-4">Rp 1.500.000<span
+                                class="text-xs font-normal text-slate-400">/gigi</span></div>
+                        <a href="#booking" onclick="setLayanan('Veneer & Smile Makeover', 1500000)"
+                            class="w-full bg-slate-50 border border-slate-200 text-teal-700 text-center py-2 rounded-xl text-sm font-semibold block hover:bg-teal-600 hover:text-white transition">Pilih
+                            Tindakan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTOR SCHEDULE SECTION -->
+    <section id="jadwal" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Jadwal Praktek Dokter Gigi
+                </h2>
+                <p class="text-slate-500">Pilih penanganan spesifik bersama tim medis berpengalaman kami.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dokter 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 space-y-4" data-aos="flip-left"
+                    data-aos-delay="100">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-teal-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            DR</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">drg. Rian Hidayat</h4>
+                            <span class="text-xs font-semibold text-teal-600 bg-teal-50 px-2 py-0.5 rounded">Spesialis
+                                Konservasi Gigi</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-200/60 pt-4 space-y-2 text-sm text-slate-600">
+                        <div class="flex justify-between"><span>Senin - Rabu</span><span
+                                class="font-semibold text-slate-900">09:00 - 15:00</span></div>
+                        <div class="flex justify-between"><span>Kamis</span><span
+                                class="font-semibold text-slate-900">13:00 - 18:00</span></div>
+                    </div>
+                </div>
+                <!-- Dokter 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 space-y-4" data-aos="flip-left"
+                    data-aos-delay="200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-sky-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            DA</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">drg. Amalia Siregar</h4>
+                            <span class="text-xs font-semibold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">Spesialis
+                                Orthodonti (Behel)</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-200/60 pt-4 space-y-2 text-sm text-slate-600">
+                        <div class="flex justify-between"><span>Rabu - Jumat</span><span
+                                class="font-semibold text-slate-900">14:00 - 20:00</span></div>
+                        <div class="flex justify-between"><span>Sabtu</span><span
+                                class="font-semibold text-slate-900">09:00 - 14:00</span></div>
+                    </div>
+                </div>
+                <!-- Dokter 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 space-y-4" data-aos="flip-left"
+                    data-aos-delay="300">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-indigo-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            DB</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">drg. Budi Wijaya</h4>
+                            <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Dokter
+                                Gigi Umum / Estetik</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-slate-200/60 pt-4 space-y-2 text-sm text-slate-600">
+                        <div class="flex justify-between"><span>Senin - Jumat</span><span
+                                class="font-semibold text-slate-900">17:00 - 21:00</span></div>
+                        <div class="flex justify-between"><span>Sabtu</span><span
+                                class="font-semibold text-slate-900">13:00 - 17:00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION (NEW) -->
+    <section id="testimoni" class="py-20 bg-slate-950 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+                <span class="text-teal-400 text-xs font-bold uppercase tracking-widest block">Ulasan Pasien</span>
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-white">Apa Kata Mereka Tentang Kami?
+                </h2>
+                <p class="text-slate-400 text-sm">Pengalaman nyata dari pasien Gajah Mada Dental Center di Medan.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-6 flex flex-col justify-between"
+                    data-aos="fade-right" data-aos-delay="100">
+                    <div class="space-y-4">
+                        <div class="flex gap-1 text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed">
+                            "Tempatnya bersih banget dan wangi, bener-bener steril. Dokternya juga ramah pas jelasin
+                            masalah gigi berlubang saya. Proses bookingnya cepat tanpa perlu registrasi ribet."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                        <div
+                            class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center font-bold text-sm text-slate-900">
+                            B</div>
+                        <div>
+                            <h5 class="font-bold text-sm text-white">Budi Santoso</h5>
+                            <p class="text-xs text-teal-400 font-medium">Pasien Tambal Gigi</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testi 2 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-6 flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="space-y-4">
+                        <div class="flex gap-1 text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed">
+                            "Puas sekali scaling di sini. Tidak terasa linu sama sekali karena peralatannya kelihatan
+                            modern banget. Ditambah pembayarannya praktis langsung pakai QRIS payment gateway."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                        <div
+                            class="w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center font-bold text-sm text-slate-900">
+                            A</div>
+                        <div>
+                            <h5 class="font-bold text-sm text-white">Anisa Rahma</h5>
+                            <p class="text-xs text-sky-400 font-medium">Pasien Perawatan Scaling</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testi 3 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-6 flex flex-col justify-between"
+                    data-aos="fade-left" data-aos-delay="300">
+                    <div class="space-y-4">
+                        <div class="flex gap-1 text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed">
+                            "Baru pertama kali coba Smile Makeover di Gajah Mada Dental Center Medan. Hasil veneer-nya
+                            natural sekali, pelayanan staf ramah dan harganya transparan di awal."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                        <div
+                            class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center font-bold text-sm text-slate-900">
+                            D</div>
+                        <div>
+                            <h5 class="font-bold text-sm text-white">Dewi Lestari</h5>
+                            <p class="text-xs text-indigo-400 font-medium">Pasien Smile Makeover</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTIKEL / BLOG SECTION (KONTEN MEDIS VALID & MODAL INSTAN) -->
+    <section id="artikel" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+                <span class="text-teal-600 text-xs font-bold uppercase tracking-widest block">Edukasi Kesehatan</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Artikel & Tips Kesehatan
+                    Gigi</h2>
+                <p class="text-slate-500 text-sm">Informasi kesehatan mulut dan tren estetika gigi terpercaya dari tim
+                    dokter kami.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Artikel 1: Scaling Gigi -->
+                <article
+                    class="group bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="w-full h-48 relative overflow-hidden group-hover:scale-105 transition duration-300">
+                            <img src="img/artikel/art 1.avif" alt="Ilustrasi Perawatan Scaling Gigi"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-4 text-xs text-slate-400">
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-calendar"></i> 24 Mei
+                                    2026</span>
+                                <span class="text-teal-600 font-semibold uppercase">Perawatan Dasar</span>
+                            </div>
+                            <h4 id="title-art-1"
+                                class="font-bold text-lg text-slate-900 group-hover:text-teal-600 transition line-clamp-2">
+                                Mengapa Sikat Gigi Saja Tidak Cukup Menghilangkan Karang Gigi?
+                            </h4>
+                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-3">
+                                Banyak yang mengira menyikat gigi dengan keras bisa merontokkan karang gigi. Faktanya,
+                                plak yang telah mengeras menjadi kalkulus membutuhkan penanganan ultrasonik.
+                            </p>
+                            <!-- Isi Konten Medis Lengkap -->
+                            <div id="content-art-1" class="hidden">
+                                <p class="mb-4">Sisa makanan yang bercampur dengan bakteri di dalam mulut akan membentuk
+                                    lapisan tipis dan lengket yang disebut <strong>plak</strong>. Jika plak ini tidak
+                                    dibersihkan
+                                    dengan benar melalui sikat gigi dan <em>dental floss</em>, dalam waktu 24 hingga 72
+                                    jam
+                                    plak akan bercampur dengan mineral di air liur dan mulai mengeras (mengalami
+                                    kalsifikasi) menjadi <strong>karang gigi (kalkulus)</strong>.</p>
+                                <p class="mb-4">Begitu plak berubah menjadi karang gigi, teksturnya menjadi sangat keras
+                                    dan mengikat kuat pada enamel gigi atau di bawah garis gusi. <strong>Menyikat gigi
+                                        sekencang apa pun tidak akan bisa merontokkannya.</strong> Memaksakan menyikat
+                                    gigi terlalu
+                                    keras justru berisiko mengikis lapisan enamel gigi dan memicu resesi gusi (gusi
+                                    turun).</p>
+                                <p class="mb-4">Satu-satunya cara aman untuk menghilangkan karang gigi adalah dengan
+                                    prosedur <strong>Scaling</strong> di klinik gigi. Dokter gigi menggunakan alat
+                                    khusus bernama
+                                    <em>Ultrasonic Scaler</em> yang menghasilkan getaran mikro untuk memecah dan
+                                    melepaskan
+                                    karang gigi tanpa merusak struktur gigi Anda.
+                                </p>
+                                <p class="font-semibold text-slate-900 mb-2">Mengapa karang gigi harus dibersihkan
+                                    minimal 6 bulan sekali?</p>
+                                <ul class="list-disc pl-5 mb-4 space-y-1">
+                                    <li><strong>Mencegah Gingivitis:</strong> Karang gigi adalah rumah yang nyaman bagi
+                                        bakteri.
+                                        Bakteri ini mengeluarkan toksin yang memicu peradangan pada gusi (gusi mudah
+                                        berdarah saat sikat gigi).</li>
+                                    <li><strong>Mencegah Bau Mulut (Halitosis):</strong> Gas yang diproduksi oleh koloni
+                                        bakteri di
+                                        karang gigi adalah penyebab utama bau mulut kronis yang sulit hilang.</li>
+                                    <li><strong>Mencegah Gigi Goyang (Periodontitis):</strong> Jika dibiarkan
+                                        bertahun-tahun,
+                                        peradangan akan menjalar dan merusak jaringan tulang penyangga gigi, membuat
+                                        gigi sehat pun bisa goyang dan tanggal dengan sendirinya.</li>
+                                </ul>
+                                <p>Oleh karena itu, kunjungan rutin ke Gajah Mada Dental Center setiap 6 bulan sekali
+                                    bukan sekadar untuk formalitas, melainkan investasi penting demi mempertahankan gigi
+                                    asli Anda hingga hari tua.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button" onclick="openArticleModal('1', 'teal')"
+                            class="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1 group/btn">
+                            Baca Selengkapnya <i
+                                class="fa-solid fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1 transition"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Artikel 2: Veneer vs Bleaching -->
+                <article
+                    class="group bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="w-full h-48 relative overflow-hidden group-hover:scale-105 transition duration-300">
+                            <img src="img/artikel/art 2.avif" alt="Ilustrasi Estetika Veneer dan Bleaching Gigi"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-4 text-xs text-slate-400">
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-calendar"></i> 20 Mei
+                                    2026</span>
+                                <span class="text-sky-600 font-semibold uppercase">Estetika Gigi</span>
+                            </div>
+                            <h4 id="title-art-2"
+                                class="font-bold text-lg text-slate-900 group-hover:text-sky-600 transition line-clamp-2">
+                                Ingin Gigi Putih Cerah? Kenali Perbedaan Veneer dan Bleaching
+                            </h4>
+                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-3">
+                                Veneer dan Bleaching adalah dua perawatan estetika paling populer untuk mencerahkan
+                                senyum. Namun, mekanisme, hasil, dan indikasinya sangat berbeda.
+                            </p>
+                            <!-- Isi Konten Medis Lengkap -->
+                            <div id="content-art-2" class="hidden">
+                                <p class="mb-4">Memiliki gigi putih bersih dapat meningkatkan rasa percaya diri secara
+                                    drastis. Di dunia kedokteran gigi estetika, dua perawatan utama yang paling sering
+                                    dicari adalah <strong>Bleaching (Teeth Whitening)</strong> dan
+                                    <strong>Veneer</strong>. Agar tidak salah
+                                    memilih, Anda perlu memahami perbedaan mendasarnya.
+                                </p>
+
+                                <p class="font-bold text-slate-900 mb-1">1. Bleaching Gigi (Pemutihan Gigi)</p>
+                                <p class="mb-4">Prosedur ini menggunakan bahan gel peroksida khusus yang diaplikasikan
+                                    pada permukaan gigi, kemudian diaktivasi menggunakan sinar laser atau LED. Bahan
+                                    aktif ini meresap ke dalam pori-pori enamel untuk mengoksidasi dan memecah noda
+                                    penuaan, rokok, kopi, atau teh.</p>
+                                <ul class="list-disc pl-5 mb-4 space-y-1">
+                                    <li><strong>Kelebihan:</strong> Proses cepat (sekitar 1 jam), tidak ada pengikisan
+                                        struktur gigi
+                                        asli, dan biaya lebih terjangkau.</li>
+                                    <li><strong>Keterbatasan:</strong> Hanya mengubah warna (tidak bisa memperbaiki gigi
+                                        patah atau
+                                        renggang) dan hasilnya tidak permanen (bisa menguning kembali dalam 1–2 tahun
+                                        tergantung pola makan).</li>
+                                </ul>
+
+                                <p class="font-bold text-slate-900 mb-1">2. Veneer Gigi</p>
+                                <p class="mb-4">Veneer adalah prosedur menempelkan cangkang tipis kustom (biasanya
+                                    terbuat dari bahan komposit atau porselen e-max)
+                                    di bagian depan gigi. Prosedur ini membutuhkan sedikit pengikisan lapisan tipis
+                                    enamel gigi agar cangkang dapat menempel dengan rata dan natural.</p>
+                                <ul class="list-disc pl-5 mb-4 space-y-1">
+                                    <li><strong>Kelebihan:</strong> Selain memutihkan, veneer bisa memperbaiki bentuk
+                                        gigi yang
+                                        boncel, menutup celah gigi renggang (diastema), meratakan gigi yang sedikit
+                                        berjejal, dan warnanya stabil tidak mudah bernoda (khusus bahan porselen).</li>
+                                    <li><strong>Keterbatasan:</strong> Membutuhkan preparasi (pengikisan gigi) dan
+                                        investasinya lebih
+                                        tinggi karena dihitung per gigi.</li>
+                                </ul>
+
+                                <p class="font-semibold text-slate-900 mb-2">Mana yang cocok untuk Anda?</p>
+                                <p>Jika susunan gigi Anda sudah rapi dan hanya ingin warnanya lebih cerah,
+                                    <strong>Bleaching</strong>
+                                    adalah solusi terbaik. Namun, jika Anda ingin merombak total estetika senyum Anda
+                                    (memperbaiki bentuk, ukuran, susunan minor, sekaligus warna), maka <strong>Veneer /
+                                        Smile
+                                        Makeover</strong> adalah pilihan yang paling tepat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button" onclick="openArticleModal('2', 'sky')"
+                            class="text-xs font-bold text-sky-600 hover:text-sky-700 flex items-center gap-1 group/btn">
+                            Baca Selengkapnya <i
+                                class="fa-solid fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1 transition"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Artikel 3: Gigi Anak -->
+                <article
+                    class="group bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="w-full h-48 relative overflow-hidden group-hover:scale-105 transition duration-300">
+                            <img src="img/artikel/art 3.jpeg" alt="Pemeriksaan karies gigi anak di klinik gigi modern"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-4 text-xs text-slate-400">
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-calendar"></i> 15 Mei
+                                    2026</span>
+                                <span class="text-purple-600 font-semibold uppercase">Kesehatan Anak</span>
+                            </div>
+                            <h4 id="title-art-3"
+                                class="font-bold text-lg text-slate-900 group-hover:text-purple-600 transition line-clamp-2">
+                                Waspada Karies Botol: Bahaya Membiarkan Anak Tidur Sambil Minum Susu
+                            </h4>
+                            <p class="text-slate-500 text-xs leading-relaxed line-clamp-3">
+                                Banyak orang tua mengira gigi susu berlubang tidak masalah karena akan diganti gigi
+                                baru. Padahal, kebiasaan minum susu dot sampai tertidur memicu karies parah.
+                            </p>
+                            <!-- Isi Konten Medis Lengkap -->
+                            <div id="content-art-3" class="hidden">
+                                <p class="mb-4">Salah satu masalah gigi yang paling sering dijumpai pada balita adalah
+                                    <em>Nursing Bottle Caries</em> atau <strong>Karies Susu Botol</strong>. Kondisi ini
+                                    ditandai dengan
+                                    kerusakan berupa lubang kehitaman yang meluas pada gigi-gigi depan atas anak, yang
+                                    sering kali menyebar dengan sangat cepat.
+                                </p>
+                                <p class="mb-4">Penyebab utamanya adalah kebiasaan membiarkan anak tertidur dengan botol
+                                    susu, jus, atau cairan manis lainnya yang masih menempel di mulut. Saat anak
+                                    tertidur, produksi air liur yang berfungsi sebagai pembersih alami mulut berkurang
+                                    drastis. Akibatnya, gula dari susu akan menggenang di sekitar gigi sepanjang malam,
+                                    menjadi makanan empuk bagi bakteri untuk memproduksi zat asam yang merusak enamel
+                                    gigi anak.</p>
+
+                                <p class="font-semibold text-slate-900 mb-2">Mengapa gigi susu anak yang rusak tidak
+                                    boleh disepelekan?</p>
+                                <ul class="list-disc pl-5 mb-4 space-y-1">
+                                    <li><strong>Penunjuk Arah Gigi Permanen:</strong> Gigi susu berfungsi sebagai
+                                        penahan ruang
+                                        (<em>space maintainer</em>) agar gigi permanen kelak tumbuh di posisi yang
+                                        benar. Jika
+                                        gigi susu tanggal terlalu dini akibat keropos, gigi di sekitarnya akan bergeser
+                                        dan membuat gigi permanen tumbuh berjejal atau tonggos.</li>
+                                    <li><strong>Gangguan Nutrisi & Bicara:</strong> Gigi yang berlubang memicu rasa
+                                        sakit yang
+                                        membuat anak malas mengunyah makanan bergizi. Selain itu, hilangnya gigi depan
+                                        terlalu cepat bisa mengganggu kemampuan pelafalan bicara (<em>speech</em>) si
+                                        kecil.
+                                    </li>
+                                    <li><strong>Infeksi Sistemik:</strong> Infeksi dari akar gigi susu yang membusuk
+                                        bisa memicu
+                                        abses (bengkak bernanah) yang dapat merusak benih gigi permanen yang sedang
+                                        berkembang di bawah gusi.</li>
+                                </ul>
+
+                                <p class="font-semibold text-slate-900 mb-2">Tips Pencegahan dari Dokter Gigi:</p>
+                                <p class="mb-2">1. Jangan biasakan anak tidur dengan dot berisi cairan manis. Jika anak
+                                    butuh dot untuk tidur, isi hanya dengan air putih matang.</p>
+                                <p class="mb-2">2. Bersihkan gusi bayi dengan kain kasa basah setelah menyusu, dan
+                                    mulailah menyikat gigi anak dengan pasta gigi berfluoride khusus anak (takaran
+                                    sebesar biji beras untuk usia di bawah 3 tahun) begitu gigi pertamanya tumbuh.</p>
+                                <p>Kenalkan anak dengan atmosfer klinik gigi sejak dini di Gajah Mada Dental Center
+                                    Medan sebelum mereka mengalami sakit gigi, agar tidak timbul trauma psikologis takut
+                                    ke dokter gigi (<em>dental anxiety</em>).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button" onclick="openArticleModal('3', 'purple')"
+                            class="text-xs font-bold text-purple-600 hover:text-purple-700 flex items-center gap-1 group/btn">
+                            Baca Selengkapnya <i
+                                class="fa-solid fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1 transition"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- OUTSIDE CONTAINER: COMPONENT STRUCTURE MODAL BOX (TETAP SAMA) -->
+        <div id="articleModal"
+            class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+            <div
+                class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col max-h-[85vh] transform scale-95 transition-transform duration-300">
+                <!-- Modal Header -->
+                <div class="p-6 border-b border-slate-100 flex justify-between items-start bg-slate-50">
+                    <div class="space-y-1 pr-6">
+                        <span id="modalCategory"
+                            class="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Edukasi</span>
+                        <h3 id="modalTitle" class="text-xl font-bold text-slate-900 tracking-tight leading-snug">Judul
+                            Artikel</h3>
+                    </div>
+                    <button type="button" onclick="closeArticleModal()"
+                        class="text-slate-400 hover:text-slate-600 p-1 text-lg">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <!-- Modal Body (Scrollable) -->
+                <div id="modalBody" class="p-6 overflow-y-auto text-sm text-slate-600 leading-relaxed space-y-4">
+                    <!-- Isi artikel dinamis masuk ke sini -->
+                </div>
+                <!-- Modal Footer -->
+                <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+                    <button type="button" onclick="closeArticleModal()"
+                        class="bg-slate-900 text-white text-xs font-semibold px-4 py-2 rounded-xl hover:bg-slate-800 transition">
+                        Selesai Membaca
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION & BOOKING FORM SECTION -->
+    <section id="booking"
+        class="py-20 bg-slate-50 border-t border-slate-100 hidden opacity-0 transition-all duration-500 ease-in-out">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 space-y-3">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Formulir Pendaftaran Instan</h2>
+                <p class="text-slate-500">Isi data medis singkat, konfirmasi harga voucher, langsung bayar aman.</p>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-3xl shadow-xl p-6 sm:p-10">
+                <form id="formPendaftaran" class="space-y-6" onsubmit="handleFormSubmit(event)">
+
+                    <!-- Nama & HP -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">Nama Lengkap Pasien</label>
+                            <input type="text" required placeholder="Contoh: Nama Anda"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">Nomor WhatsApp/HP</label>
+                            <input type="tel" required placeholder="Contoh: 08XXXXXXXXXX"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition">
+                        </div>
+                    </div>
+
+                    <!-- Layanan -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">Pilih Jenis Tindakan Medis</label>
+                            <select id="selectTindakan" onchange="updateHargaDariSelect()"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition bg-white">
+                                <option value="0" data-nama="Belum Memilih">-- Pilih Layanan --</option>
+                                <option value="250000" data-nama="Scaling Gigi">Scaling Gigi (Rp 250.000)</option>
+                                <option value="350000" data-nama="Tambal Gigi (Komposit)">Tambal Gigi (Rp 350.000)
+                                </option>
+                                <option value="400000" data-nama="Cabut / Perawatan Saluran Akar">Cabut Gigi / Saluran
+                                    Akar (Rp 400.000)</option>
+                                <option value="2000000" data-nama="Bleaching (Pemutihan)">Bleaching / Pemutihan (Rp
+                                    2.000.000)</option>
+                                <option value="4500000" data-nama="Behel Gigi (Orthodontic)">Behel Gigi / Orthodontic
+                                    (Rp 4.500.000)</option>
+                                <option value="1500000" data-nama="Veneer & Smile Makeover">Veneer & Smile Makeover (Rp
+                                    1.500.000)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-700">Pilih Dokter & Jadwal</label>
+                            <select required
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition bg-white">
+                                <option value="">-- Pilih Dokter & Hari --</option>
+                                <option>drg. Rian Hidayat (Spesialis Konservasi)</option>
+                                <option>drg. Amalia Siregar (Spesialis Orthodonti)</option>
+                                <option>drg. Budi Wijaya (Dokter Gigi Umum / Estetik)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Detail Keluhan -->
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Detail Keluhan Sakit / Penyakit
+                            Gigi</label>
+                        <textarea rows="3" required
+                            placeholder="Tulis detail keluhan Anda (misal: gigi geraham kanan bawah ngilu saat minum dingin)..."
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition"></textarea>
+                    </div>
+
+                    <!-- Promo Voucher -->
+                    <div
+                        class="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex flex-col sm:flex-row gap-3 items-end">
+                        <div class="space-y-1 w-full">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500">Kode Voucher
+                                / Promo</label>
+                            <input type="text" id="inputPromo" placeholder="Masukkan kode promo (Contoh: MEDANSEHAT)"
+                                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none bg-white uppercase text-sm font-semibold placeholder:normal-case">
+                        </div>
+                        <button type="button" onclick="cekKodePromo()"
+                            class="w-full sm:w-auto bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 transition whitespace-nowrap h-[46px]">
+                            Gunakan Voucher
+                        </button>
+                    </div>
+
+                    <!-- Invoice Calculation Summary -->
+                    <div class="border-t border-dashed border-slate-200 pt-6 space-y-3">
+                        <div class="flex justify-between text-sm text-slate-600">
+                            <span>Biaya Tindakan Utama</span>
+                            <span id="txtBiayaAsli" class="font-medium">Rp 0</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-emerald-600 font-medium">
+                            <span>Potongan Diskon</span>
+                            <span id="txtPotonganDiskon">- Rp 0</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-slate-100">
+                            <span class="font-bold text-slate-900">Total Pembayaran Akhir</span>
+                            <span id="txtTotalBayar" class="text-2xl font-black text-teal-600">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <!-- Xendit Submit -->
+                    <button type="submit"
+                        class="w-full bg-teal-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-teal-700 transition shadow-lg shadow-teal-100 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-shield-halved"></i> Bayar Sekarang via Xendit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="lokasi" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3" data-aos="fade-up">
+                <span class="text-teal-600 text-xs font-bold uppercase tracking-widest block">Lokasi Klinik</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Kunjungi Gajah Mada Dental
+                    Center</h2>
+                <p class="text-slate-500 text-sm">Temukan kami dengan mudah melalui Google Maps di bawah ini.</p>
+            </div>
+
+            <div class="mt-12" data-aos="fade-up">
+                <h3 class="text-center text-xl font-bold mb-5">Lokasi Salon Kami</h3>
+                <div class="w-full h-96 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4735.435081592943!2d98.6562391086915!3d3.585089737303262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312fac7aeb4381%3A0x7360b6081fff4bd0!2sGajah%20Mada%20Dental%20Center!5e0!3m2!1sid!2sid!4v1779814945792!5m2!1sid!2sid"
+                        class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <a href="https://www.google.com/maps/place/Gajah+Mada+Dental+Center/@3.5849841,98.6584933,17z/data=!3m1!4b1!4m6!3m5!1s0x30312fac7aeb4381:0x7360b6081fff4bd0!8m2!3d3.5849841!4d98.6584933!16s%2Fg%2F11z57mwh1h?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-teal-600 font-semibold hover:text-teal-700 transition text-sm">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Langsung di Aplikasi Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3" data-aos="fade-up">
+                <span class="text-teal-600 text-xs font-bold uppercase tracking-widest block">Pertanyaan Populer</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">F.A.Q Klinik</h2>
+                <p class="text-slate-500 text-sm">Punya pertanyaan seputar layanan kami? Temukan jawaban cepatnya di
+                    sini.</p>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up">
+
+                <div
+                    class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50 transition-all duration-300">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-semibold text-slate-800 pr-4">Apakah perlu membuat akun terlebih dahulu untuk
+                            booking jadwal?</span>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                            Tidak perlu. Gajah Mada Dental Center menggunakan sistem pendaftaran instan. Anda cukup
+                            mengisi form booking dengan data diri dan nomor WhatsApp aktif, memilih jadwal dokter, lalu
+                            menyelesaikan konfirmasi pendaftaran.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50 transition-all duration-300">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-semibold text-slate-800 pr-4">Metode pembayaran apa saja yang didukung?</span>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                            Kami bekerja sama dengan payment gateway Xendit untuk memastikan keamanan transaksi Anda.
+                            Kami menerima pembayaran via Transfer Bank (Virtual Account), E-Wallet (OVO, Dana, LinkAja,
+                            ShopeePay), QRIS, serta pembayaran langsung di kasir klinik.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50 transition-all duration-300">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-semibold text-slate-800 pr-4">Bagaimana jika saya ingin mengubah atau
+                            membatalkan jadwal pemeriksaan?</span>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                            Anda dapat melakukan perubahan jadwal (reschedule) atau pembatalan dengan menghubungi
+                            Customer Service kami melalui tombol WhatsApp "Hubungi Kami" paling lambat 3 jam sebelum
+                            jadwal konsultasi dimulai.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50 transition-all duration-300">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                        <span class="font-semibold text-slate-800 pr-4">Apakah seluruh peralatan medis di klinik dijamin
+                            steril?</span>
+                        <i
+                            class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                            Ya, tentu saja. Kesehatan dan kenyamanan pasien adalah prioritas utama kami. Seluruh
+                            peralatan medis di klinik kami melewati proses sterilisasi standar medis yang ketat
+                            menggunakan mesin Autoclave modern sebelum digunakan kembali.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="h-10 w-10 overflow-hidden rounded-full bg-slate-800 flex items-center justify-center">
+                            <img src="img/logo.jpg" alt="Logo" class="h-full w-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-white tracking-tight block">GAJAH MADA</span>
+                            <span
+                                class="text-xs font-semibold text-teal-400 uppercase tracking-wider block -mt-1">Dental
+                                Center</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Klinik Gigi Modern & Terpercaya di Medan. Semua peralatan medis dijamin bersih, steril, dan
+                        higienis demi kenyamanan dan kesehatan senyum Anda.
+                    </p>
+                    <div class="flex items-center gap-2 pt-2">
+                        <a href="https://www.instagram.com/gmdentalcenter.id/" target="_blank" rel="noopener noreferrer"
+                            class="w-9 h-9 rounded-full bg-slate-800 hover:bg-teal-600 hover:text-white flex items-center justify-center text-slate-400 transition duration-300">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                        </a> Instagram
+                    </div>
+                </div>
+
+                <div class="space-y-4 md:pl-8">
+                    <h4 class="text-white font-semibold text-sm tracking-wider uppercase">Navigasi</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#hero" class="hover:text-teal-400 transition duration-200 block">Beranda</a></li>
+                        <li><a href="#layanan" class="hover:text-teal-400 transition duration-200 block">Layanan
+                                Medis</a></li>
+                        <li><a href="#jadwal" class="hover:text-teal-400 transition duration-200 block">Jadwal
+                                Praktik</a></li>
+                        <li><a href="#testimoni" class="hover:text-teal-400 transition duration-200 block">Testimoni
+                                Pasien</a></li>
+                        <li><a href="#lokasi" class="hover:text-teal-400 transition duration-200 block">Lokasi
+                                Klinik</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-white font-semibold text-sm tracking-wider uppercase">Kontak & Lokasi</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-teal-400 mt-1 flex-shrink-0"></i>
+                            <span>Kota Medan, Sumatera Utara</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-teal-400 flex-shrink-0"></i>
+                            <span>+62 811-8550-885</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-teal-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <span class="block text-white font-medium">Senin - Sabtu:</span>
+                                <span class="text-slate-400">09.00 - 21.00 WIB</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div>
+                    <p>&copy; 2026 <span class="text-slate-300 font-medium">Gajah Mada Dental Center Medan</span>. All
+                        rights reserved.</p>
+                </div>
+                <div
+                    class="flex items-center gap-2 bg-slate-950/50 px-3 py-1.5 rounded-md border border-slate-800/60 text-center sm:text-right">
+                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
+                    <span>Powered by CodeIgniter 4 Engine & Xendit API Gateway</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOMBOL WHATSAPP MELAYANG DENGAN TOMBOL CLOSE DI MOBILE -->
+    <div id="wrapper-wa" class="fixed bottom-6 right-6 z-[9999] flex items-center" data-aos="unset">
+        <!-- Tombol Utama WhatsApp -->
+        <a id="btn-wa"
+            href="https://wa.me/628118550885?text=Halo%20Admin%20Gajah%20Mada%20Dental%20Center%2C%20saya%20ingin%20tanya%20mengenai%20perawatan%20gigi..."
+            target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-emerald-500 text-white px-4 py-3 rounded-full shadow-xl hover:bg-emerald-600 hover:scale-105 transition-all duration-300 group font-medium text-sm border border-emerald-400/20">
+            <i class="fa-brands fa-whatsapp text-2xl group-hover:animate-none"></i>
+            <span>Hubungi Kami</span>
+        </a>
+
+        <!-- Tombol Close (Hanya Muncul di Mobile/HP) -->
+        <button type="button" onclick="closeWAMobile(event)"
+            class="md:hidden absolute -top-2 -right-2 bg-rose-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shadow-md border border-white hover:bg-rose-700 transition z-[10000]">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- TOMBOL SCROLL TO TOP -->
+    <button id="btn-scroll-top" type="button" onclick="scrollToTop()"
+        class="fixed bottom-24 right-6 z-[9999] bg-slate-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-xl hover:bg-teal-600 hover:scale-110 transition-all duration-300 opacity-0 invisible translate-y-5 border border-slate-700">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- AOS (Animate On Scroll) JS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true
+        });
+
+        let hargaAktif = 0;
+        let diskonAktif = 0;
+
+        const voucherDatabase = {
+            "MEDANSEHAT": 50000,
+            "GAJAHMADA100": 100000,
+            "SMILEMAKEOVER": 150000
+        };
+
+        function formatRupiah(angka) {
+            return "Rp " + angka.toLocaleString('id-ID');
+        }
+
+        // Fungsi pembantu untuk memunculkan seksi formulir pendaftaran yang disembunyikan
+        function tampilkanFormBooking() {
+            const bookingSection = document.getElementById('booking');
+
+            // Cek jika seksi masih memiliki kelas tersembunyi
+            if (bookingSection.classList.contains('hidden')) {
+                bookingSection.classList.remove('hidden');
+                // Berikan jeda waktu mikro agar efek perubahan transisi opacity berjalan lancar
+                setTimeout(() => {
+                    bookingSection.classList.remove('opacity-0');
+                }, 50);
+            }
+        }
+
+        function setLayanan(namaLayanan, harga) {
+            // Panggil fungsi untuk menampilkan form booking terlebih dahulu
+            tampilkanFormBooking();
+
+            const selectEl = document.getElementById('selectTindakan');
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].getAttribute('data-nama') === namaLayanan) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+            hargaAktif = harga;
+            hitungTotal();
+
+            // Gulirkan halaman secara mulus (smooth scroll) ke arah form booking yang baru muncul
+            setTimeout(() => {
+                document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function updateHargaDariSelect() {
+            const selectEl = document.getElementById('selectTindakan');
+            hargaAktif = parseInt(selectEl.value) || 0;
+            hitungTotal();
+        }
+
+        function cekKodePromo() {
+            const inputKode = document.getElementById('inputPromo').value.trim().toUpperCase();
+            if (hargaAktif === 0) {
+                alert("Silakan pilih jenis tindakan medis terlebih dahulu.");
+                return;
+            }
+            if (voucherDatabase.hasOwnProperty(inputKode)) {
+                diskonAktif = voucherDatabase[inputKode];
+                alert(`Voucher berhasil digunakan! Potongan ${formatRupiah(diskonAktif)}.`);
+            } else {
+                diskonAktif = 0;
+                alert("Kode promo tidak valid.");
+            }
+            hitungTotal();
+        }
+
+        function hitungTotal() {
+            let totalAkhir = hargaAktif - diskonAktif;
+            if (totalAkhir < 0) totalAkhir = 0;
+
+            document.getElementById('txtBiayaAsli').innerText = formatRupiah(hargaAktif);
+            document.getElementById('txtPotonganDiskon').innerText = "- " + formatRupiah(diskonAktif);
+            document.getElementById('txtTotalBayar').innerText = formatRupiah(totalAkhir);
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            if (hargaAktif === 0) {
+                alert("Harap pilih jenis tindakan medis.");
+                return;
+            }
+            alert("Memproses pendaftaran... Data siap dikirimkan ke REST API Controller CodeIgniter 4 Anda menuju Endpoint Xendit!");
+        }
+
+        // FUNGSI INTERAKTIF POP-UP MODAL ARTIKEL
+        function openArticleModal(id, colorTheme) {
+            const modal = document.getElementById('articleModal');
+            const title = document.getElementById('title-art-' + id).innerText;
+            const fullContent = document.getElementById('content-art-' + id).innerHTML;
+
+            // Set Konten Dinamis ke Dalam Modal
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerHTML = fullContent;
+
+            // Set Warna Tag Kategori agar Menyesuaikan Tema Card
+            const catBadge = document.getElementById('modalCategory');
+            catBadge.className = "text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"; // reset
+            if (colorTheme === 'teal') catBadge.classList.add('bg-teal-50', 'text-teal-700');
+            if (colorTheme === 'sky') catBadge.classList.add('bg-sky-50', 'text-sky-700');
+            if (colorTheme === 'purple') catBadge.classList.add('bg-purple-50', 'text-purple-700');
+
+            // Tampilkan Modal dengan Transisi Mulus
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.transform').classList.remove('scale-95');
+                modal.querySelector('.transform').classList.add('scale-100');
+            }, 10);
+
+            // Kunci scroll halaman utama saat modal terbuka
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('.transform').classList.remove('scale-100');
+            modal.querySelector('.transform').classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                // Kembalikan scroll halaman utama
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+
+        // Menutup modal otomatis jika pengguna klik area luar kotak putih modal
+        window.onclick = function (event) {
+            const modal = document.getElementById('articleModal');
+            if (event.target == modal) {
+                closeArticleModal();
+            }
+        }
+
+        // Fungsi untuk memicu efek memantul pada tombol WA (mengincar elemen pembungkus)
+        function triggerWABounce() {
+            const wrapperWA = document.getElementById('wrapper-wa');
+            if (wrapperWA && !wrapperWA.classList.contains('hidden')) { //
+                // Tambahkan class animasi kustom dari bawah ke atas
+                wrapperWA.classList.add('animasi-wa-pantul');
+
+                // Hapus kembali class setelah 2 detik (2000 milidetik menggunakan titik, bukan koma)
+                setTimeout(() => {
+                    wrapperWA.classList.remove('animasi-wa-pantul');
+                }, 2000);
+            }
+        }
+
+        // Jalankan animasi berkala setiap 10 detik
+        setInterval(triggerWABounce, 10000);
+
+        // Fungsi khusus untuk menutup/menyembunyikan tombol WA ketika tombol 'X' diklik
+        function closeWAMobile(event) {
+            // Mencegah trigger klik tembus ke tombol utama WhatsApp
+            event.preventDefault();
+            event.stopPropagation();
+
+            const wrapperWA = document.getElementById('wrapper-wa');
+            const btnScrollTop = document.getElementById('btn-scroll-top');
+
+            if (wrapperWA) {
+                // Berikan efek transisi menghilang secara halus
+                wrapperWA.style.opacity = '0';
+                wrapperWA.style.transition = 'opacity 0.3s ease';
+
+                // Sembunyikan total setelah transisi selesai
+                setTimeout(() => {
+                    wrapperWA.classList.add('hidden');
+
+                    if (btnScrollTop) {
+                        // Menghapus jarak tinggi lama, menggantinya dengan jarak bawah yang baru
+                        btnScrollTop.classList.remove('bottom-24');
+                        btnScrollTop.classList.add('bottom-6');
+                    }
+                }, 300);
+            }
+        }
+
+        // JavaScript untuk Kontrol Sidebar Mobile Menu
+        const btnHamburger = document.getElementById('btn-hamburger');
+        const btnCloseSidebar = document.getElementById('btn-close-sidebar');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const sidebarPanel = document.getElementById('sidebar-panel');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openSidebar() {
+            mobileSidebar.classList.remove('invisible', 'opacity-0');
+            mobileSidebar.classList.add('visible', 'opacity-100');
+            sidebarPanel.classList.remove('translate-x-full');
+            sidebarPanel.classList.add('translate-x-0');
+            document.body.classList.add('overflow-hidden'); // Kunci scroll layar utama
+        }
+
+        function closeSidebar() {
+            mobileSidebar.classList.remove('visible', 'opacity-100');
+            mobileSidebar.classList.add('invisible', 'opacity-0');
+            sidebarPanel.classList.remove('translate-x-0');
+            sidebarPanel.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden'); // Lepas kunci scroll
+        }
+
+        // Event Listeners
+        btnHamburger.addEventListener('click', openSidebar);
+        btnCloseSidebar.addEventListener('click', closeSidebar);
+        mobileSidebar.addEventListener('click', (e) => {
+            if (e.target === mobileSidebar) closeSidebar();
+        });
+
+        // Otomatis tutup sidebar saat salah satu link diklik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
+
+        // JavaScript untuk Fungsi Scroll to Top
+        const btnScrollTop = document.getElementById('btn-scroll-top');
+
+        // Deteksi scroll pengguna
+        window.addEventListener('scroll', () => {
+            // Jika scroll lebih dari 300px dari atas, munculkan tombol
+            if (window.scrollY > 300) {
+                btnScrollTop.classList.remove('opacity-0', 'invisible', 'translate-y-5');
+                btnScrollTop.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                // Jika kembali ke atas, sembunyikan tombol
+                btnScrollTop.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                btnScrollTop.classList.add('opacity-0', 'invisible', 'translate-y-5');
+            }
+        });
+
+        // Fungsi untuk menggulirkan halaman ke atas secara mulus
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // JavaScript untuk Kontrol FAQ Accordion
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const item = toggle.parentElement;
+                const content = item.querySelector('.faq-content');
+                const icon = toggle.querySelector('i');
+
+                // Cek apakah item ini sudah terbuka
+                const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                // TUTUP SEMUA FAQ YANG SEDANG TERBUKA LAINNYA (Opsional, agar rapi jika satu dibuka, yang lain menutup)
+                document.querySelectorAll('.faq-content').forEach(el => el.style.maxHeight = '0px');
+                document.querySelectorAll('.faq-toggle i').forEach(el => el.classList.remove('rotate-180'));
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    el.classList.remove('border-teal-500', 'shadow-md');
+                    el.classList.add('border-slate-200');
+                });
+
+                // JIKA SEBELUMNYA TIDAK TERBUKA, MAKA BUKA SEKARANG
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                    item.classList.remove('border-slate-200');
+                    item.classList.add('border-teal-500', 'shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

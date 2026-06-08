@@ -1075,16 +1075,31 @@
 
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-                <div>
-                    <p>&copy; 2026 <span class="text-slate-300 font-medium">Gajah Mada Dental Center Medan</span>. All
-                        rights reserved.</p>
+            <div class="pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+
+                <div class="text-center lg:text-left">
+                    <p>
+                        &copy; <span id="currentYear"></span>
+                        <span class="text-slate-300 font-medium">
+                            Gajah Mada Dental Center Medan
+                        </span>.
+                        All rights reserved.
+                    </p>
+            
+                    <p class="mt-1">
+                        Website template created by
+                        <span class="text-slate-300 font-medium">
+                            Muhammad Yamin, S.Kom
+                        </span>.
+                    </p>
                 </div>
+            
                 <div
-                    class="flex items-center gap-2 bg-slate-950/50 px-3 py-1.5 rounded-md border border-slate-800/60 text-center sm:text-right">
+                    class="flex items-center gap-2 bg-slate-950/50 px-3 py-1.5 rounded-md border border-slate-800/60 text-center">
                     <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
                     <span>Powered by CodeIgniter 4 Engine & Xendit API Gateway</span>
                 </div>
+            
             </div>
         </div>
     </footer>
@@ -1115,6 +1130,9 @@
 
     <!-- AOS (Animate On Scroll) JS Script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
     <script>
         AOS.init({
             once: true
